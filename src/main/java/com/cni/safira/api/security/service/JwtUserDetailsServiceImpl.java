@@ -53,7 +53,17 @@ public class JwtUserDetailsServiceImpl implements UserDetailsService {
 
 			//Retorna o response
 			//System.out.println("PersonId: " + body.value.getResponse().getPersonId());
-			user.setId(body.value.getResponse().getPersonId());
+			String personId = body.value.getResponse().getPersonId();
+			
+			if(personId.equals("")) {
+				//return "usuario nao existe";
+			} else {
+				//exite envio o id envio o id e recebo a senha criptografada
+				//comparo com a senha de login. se for valido true 
+				//senao senha incorreta 
+			}
+			
+			user.setId(personId);
 			
 		} catch (Exception e) {
 			e.printStackTrace();

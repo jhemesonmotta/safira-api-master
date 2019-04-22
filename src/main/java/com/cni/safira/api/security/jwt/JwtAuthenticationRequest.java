@@ -5,24 +5,24 @@ import java.io.Serializable;
 public class JwtAuthenticationRequest implements Serializable {
 
 	private static final long serialVersionUID = 1L;
-	private String cpf_responsavel;
+	private String cpfResponsavel;
 	private String password;
 
 	public JwtAuthenticationRequest() {
 		super();
 	}
 
-	public JwtAuthenticationRequest(String cpf_responsavel, String password) {
-		this.setCpf_responsavel(cpf_responsavel);
+	public JwtAuthenticationRequest(String cpfResponsavel, String password) {
+		this.setCpfResponsavel(cpfResponsavel);
 		this.setPassword(password);
-	}	
-
-	public String getCpf_responsavel() {
-		return cpf_responsavel;
+	}
+	
+	public String getCpfResponsavel() {
+		return cpfResponsavel;
 	}
 
-	public void setCpf_responsavel(String cpf_responsavel) {
-		this.cpf_responsavel = cpf_responsavel;
+	public void setCpfResponsavel(String cpfResponsavel) {
+		this.cpfResponsavel = cpfResponsavel;
 	}
 
 	public String getPassword() {

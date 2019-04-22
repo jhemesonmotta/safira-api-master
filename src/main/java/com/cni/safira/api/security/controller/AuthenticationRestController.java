@@ -43,14 +43,14 @@ public class AuthenticationRestController {
 			throws AuthenticationException {
 
 		final Authentication authentication = authenticationManager
-				.authenticate(new UsernamePasswordAuthenticationToken(authenticationRequest.getCpf_responsavel(),
+				.authenticate(new UsernamePasswordAuthenticationToken(authenticationRequest.getCpfResponsavel(),
 						authenticationRequest.getPassword()));
 
 		SecurityContextHolder.getContext().setAuthentication(authentication);
 
-		final UserDetails userDetails = userDetailsService.loadUserByUsername(authenticationRequest.getCpf_responsavel());
+		final UserDetails userDetails = userDetailsService.loadUserByUsername(authenticationRequest.getCpfResponsavel());
 		final String token = jwtTokenUtil.generateToken(userDetails);
-		final User user = userService.findByEmail(authenticationRequest.getCpf_responsavel());
+		final User user = userService.findByEmail(authenticationRequest.getCpfResponsavel());
 		user.setPassword(null);
 
 		return ResponseEntity.ok(new CurrentUser(token, user));
